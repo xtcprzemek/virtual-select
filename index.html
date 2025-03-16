@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="dist/virtual-select.min.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-3">
+        <div id="example-select"></div>
+      </div>
+      <div class="col">
+        <select
+          multiple
+          class="mySelect2"
+          name="native-select"
+          placeholder="Native Select"
+          data-search="false"
+          data-silent-initial-value-set="true"
+        >
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+          <option value="3">Option 3</option>
+          <option value="3">Option 3</option>
+          <option value="3">Option 3</option>
+          <option value="3">Option 3</option>
+          <option value="3">Option 3</option>
+          <option value="3">Option 3</option>
+          <option value="3">Option 3</option>
+          <option value="3">Option 3</option>
+          <option value="3">Option 3</option>
+          <option value="3">Option 3</option>
+          <option value="3">Option 3</option>
+          <option value="3">Option 3</option>
+          <option value="3">Option 3</option>
+          ...
+        </select>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="dist/virtual-select.js"></script>
+    <script>
+      myOptions = [
+        {
+          label: "Options 1",
+          value: "1",
+          alias: "custom label for search",
+          classNames: "customClassNames",
+        },
+        {
+          label: "Options 2",
+          value: "2",
+          description: "custom description for label",
+          customData: "",
+        },
+        { label: "Options 3", value: "3" },
+        { label: "Options 100000", value: "100000" },
+      ];
+
+      VirtualSelect.init({
+        ele: "#example-select",
+        options: myOptions,
+        multiple: true,
+      });
+
+      VirtualSelect.init({
+        ele: ".mySelect2",
+        multiple: true,
+      });
+    </script>
+  </body>
+</html>
